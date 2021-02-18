@@ -1,0 +1,66 @@
+{
+    "key": "gtdsimple",
+    "name": "gtdsimple",
+    "description": "A responsive Vanilla theme with customization options.",
+    "version": "2.0.1",
+    "hidden": false,
+    "authors": [
+        {
+            "name": "GTD",
+            "email": "hiro@ecdo.co",
+            "homepage": "https://gtd.xyz"
+        }
+    ],
+    "isResponsive": true,
+    "license": "GPL-2.0-only",
+    "sites": [],
+    "priority": 1000,
+    "type": "theme",
+    "build": {
+        "process": "v1"
+    },
+    "options": {
+        "Styles": {
+            "Default": "%s_default",
+            "Simple": "%s_simple",
+            "Classic": "%s_classic",
+            "Dark": "%s_dark",
+            "Cerulean": "%s_cerulean",
+            "Coral": "%s_coral",
+            "Dusk": "%s_dusk"
+        }
+    },
+    "assets": {
+        "variables_default": {
+            "type": "json",
+            "file": "variables_default.json"
+        },
+        "variables_simple": {
+            "type": "json",
+            "file": "variables_simple.json"
+        },
+        "variables_classic": {
+            "type": "json",
+            "file": "variables_classic.json"
+        },
+        "variables_coral": {
+            "type": "json",
+            "file": "variables_coral.json"
+        },
+        "variables_dusk": {
+            "type": "json",
+            "file": "variables_dusk.json"
+        },
+        "variables_dark": {
+            "type": "json",
+            "file": "variables_dark.json"
+        },
+        "variables_cerulean": {
+            "type": "json",
+            "file": "variables_cerulean.json"
+        }
+    },
+    "Features": {
+        "LegacyDataDrivenTheme": true
+    }
+}

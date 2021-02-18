@@ -1,0 +1,45 @@
+version: 2.1
+aliases:
+  - &phpUnit
+    run:
+      name: PHPUnit
+      command: |
+        cd ~/project
+        ./vendor/bin/phpunit -c phpunit.xml
+  - &composerInstall
+    run:
+      name: Composer Install
+      command: |
+        cd ~/project
+        composer install --optimize-autoloader
+  - &testSteps
+    - checkout
+    - *composerInstall
+    - *phpUnit
+executors:
+  php72:
+    docker:
+      - image: circleci/php:7.2-cli
+  php73:
+    docker:
+      - image: circleci/php:7.3-cli
+  php74:
+    docker:
+      - image: circleci/php:7.4-cli
+jobs:
+  test_php72:
+    executor: php72
+    steps: *testSteps
+  test_php73:
+    executor: php73
+    steps: *testSteps
+  test_php74:
+    executor: php74
+    steps: *testSteps
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - test_php72
+      - test_php73
+      - test_php74

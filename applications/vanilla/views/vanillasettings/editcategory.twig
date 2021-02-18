@@ -1,0 +1,128 @@
+
+{% from "@dashboard/components/macros.twig" import dashboardHeading %}
+
+{{ helpAsset(
+    sprintf(t('About %s'), t('Categories')),
+    t(
+        'Categories are used to organize discussions.',
+        'Categories allow you to organize your discussions.'
+    )
+) }}
+
+{{
+dashboardHeading({
+    title: Title,
+    returnUrl: '/vanilla/settings/categories'
+})
+}}
+{{ form.open({'enctype': 'multipart/form-data'})}}
+{{ form.errors()}}
+{{ form.hidden('ParentCategoryID')}}
+<ul>
+    <li class="form-group">
+        <div class="label-wrap">
+            {{ form.label('Category', 'Name')}}
+        </div>
+        <div class="input-wrap">
+            {{ form.textBox('Name')}}
+        </div>
+    </li>
+    <li class="form-group">
+        <div class="label-wrap">
+            <strong>{{ t('Category Url:') }}</strong>
+        </div>
+        <div id="UrlCode" class="input-wrap category-url-code">
+            {% apply spaceless %}
+                <div class="category-url">
+                    {{ url('/categories', true) }}{{- '/' -}}
+                    <span>{{ form.getValue('UrlCode') }}</span>
+                </div>
+                {{- form.textBox('UrlCode') -}}
+                {{- form.getValue('UrlCode') ? '/' : '' -}}
+                <a class="Edit btn btn-link" href="#">{{ t('edit') }}</a>&nbsp;<a class="Save btn btn-primary" href="#">{{ t('OK') }}</a>&nbsp;
+            {% endapply %}
+        </div>
+    </li>
+    <li class="form-group">
+        <div class="label-wrap">
+            {{ form.label('Description', 'Description') }}
+        </div>
+        <div class="input-wrap">
+            {{ form.textBox('Description', {'MultiLine': true }) }}
+        </div>
+    </li>
+    <li class="form-group">
+        <div class="label-wrap">
+            {{ form.label('Css Class', 'CssClass') }}
+        </div>
+        <div class="input-wrap">
+            {{ form.textBox('CssClass', {'MultiLine': false}) }}
+        </div>
+    </li>
+    {{ form.imageUploadReact(
+        'Photo',
+        t('Photo')
+    ) }}
+    {{ form.imageUploadReact(
+        "BannerImage",
+        t('Banner Image'),
+        t('The banner image to use for this category. Recommended dimensions are about 1000px by 400px or a similar ratio.')
+    ) }}
+
+    <li class="form-group">
+        <div class="label-wrap">
+            {{ form.label('Display As', 'DisplayAs') }}
+        </div>
+        <div class="input-wrap">
+            {{ form.dropDown('DisplayAs', DisplayAsOptions, {'Wrap': true}) }}
+        </div>
+    </li>
+    {#
+        // Extended fields may be defined through some addon.
+     #}
+    {% if _ExtendedFields is defined %}
+        {{ form.simple(_ExtendedFields, []) }}
+    {% endif %}
+    <li class="form-group">
+        {{ form.toggle('HideAllDiscussions', 'Hide from the recent discussions page.') }}
+    </li>
+    {% if Operation is same as('Edit') %}
+        <li class="form-group">
+            {{ form.toggle('Archived', 'This category is archived.') }}
+        </li>
+    {% endif %}
+    {{ firePluggableEchoEvent(pluggable, 'afterCategorySettings') }}
+    {% if PermissionData|length > 0 %}
+        <li id="Permissions" class="form-group">
+            {{ form.toggle('CustomPermissions', 'This category has custom permissions.') }}
+        </li>
+    {% endif %}
+
+    <li id="Featured" class="form-group">
+        {{ form.toggle('Featured', 'Featured category.') }}
+    </li>
+
+</ul>
+<div class="CategoryPermissions">
+
+    {% if DiscussionTypes|length > 1 %}
+        <div class="P DiscussionTypes form-group">
+            <div class="label-wrap">
+                {{ form.label('Discussion Types') }}
+            </div>
+            <div class="checkbox-list input-wrap">
+                {% for type, row in DiscussionTypes %}
+                    {{ form.checkBox('AllowedDiscussionTypes[]', row.Plural ?: type, {value: type}) }}
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if _PermissionFields is defined %}
+    {{ form.simple(_PermissionFields, []) }}
+    {% endif %}
+
+    <div class="padded">{{ t('Check all permissions that apply for each role') }}</div>
+    {{ form.checkBoxGridGroups(PermissionData, 'Permission') }}
+</div>
+{{ form.close('Save') }}
