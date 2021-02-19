@@ -26,7 +26,7 @@ $Definition['%s Agrees'] = '%s个赞同';
 $Definition['%s and %s others'] = '%s和%s其他人';
 $Definition['%s and you'] = '%s和您';
 $Definition['%s Answers'] = '%s个回答';
-$Definition['%s Awesomes'] = '%s个顶';
+$Definition['%s Awesomes'] = '%s个哈喇子';
 $Definition['%s by %s'] = '%s除以%s';
 $Definition['%s changed %s\'s permissions.'] = '%s修改了%s的权限。';
 $Definition['%s Comment'] = '%s条评论';
@@ -256,7 +256,7 @@ $Definition['Authentication'] = '认证';
 $Definition['Author'] = '作者';
 $Definition['available'] = '可用的';
 $Definition['Awaiting Moderation'] = '等待审核';
-$Definition['Awesome'] = '顶';
+$Definition['Awesome'] = '哈喇子';
 
 $Definition['Back to Discussions'] = '返回话题列表';
 $Definition['Back to Profile'] = '返回个人资料';
@@ -488,7 +488,7 @@ $Definition['editor.MarkdownHelpText'] = '您可以在帖子中使用 <a href="h
 $Definition['editor.TextHelpText'] = '您在帖子中使用纯文本。';
 $Definition['editor.WysiwygHelpText'] = '您在帖子中使用 <a href="https://en.wikipedia.org/wiki/WYSIWYG" target="_new">WYSIWYG</a>。';
 $Definition['Edit Preferences'] = '编辑设置';
-$Definition['Edit Profile'] = '编辑个人资料';
+$Definition['Edit Profile'] = '编辑资料';
 $Definition['Edit Tag'] = '编辑标签';
 $Definition['Edit Thumbnail'] = '编辑缩略图';
 $Definition['Eighth Anniversary'] = '八周年';
@@ -751,7 +751,7 @@ $Definition['Inserted'] = '已插入';
 $Definition['Insert Image'] = '插入图片';
 $Definition['Insert Media'] = '插入媒体';
 $Definition['Insert Url'] = '插入网址';
-$Definition['Insightful'] = '有见地';
+$Definition['Insightful'] = '有深度';
 $Definition['Internal'] = '内部';
 $Definition['In this Conversation'] = '在本次对话中';
 $Definition['Invalid CSRF token.'] = '无效的 CSRF token。请重试。';
@@ -815,7 +815,7 @@ $Definition['Leave Group'] = '离开群';
 $Definition['Leaving'] = '离开';
 $Definition['Length'] = '长度';
 $Definition['Level %s'] = '等级 %s';
-$Definition['Like'] = '标题';
+$Definition['Like'] = '喜欢';
 $Definition['Line Level Formatting Menu'] = '行级格式菜单';
 $Definition['Link'] = '链接';
 $Definition['Link to content:'] = '文章链接';
@@ -1734,3 +1734,10 @@ $Definition['Your status for this event is now: <b>%s</b>'] = '您对于该活�
 $Definition['Your warning was added.'] = '警告添加成功。';
 $Definition['You were added to a conversation.'] = '{InsertUserID,user} 添加 {NotifyUserID,you} 到了一个 <a href="{Url,htmlencode}">会话</a>中。';
 $Definition['You wrote:'] = '您写道：';
+
+
+$Definition['View Profile'] = '查看资料';
+$Definition['Flag this Discussion'] = '举报帖子';
+$Definition['FlagForReview'] = "举报后管理员会进行审核确认. 请填写举报原因.";
+$Definition['FlagLinkContent'] = "帖子链接: ";
+$Definition['Flag this!'] = "举报";

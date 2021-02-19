@@ -16,6 +16,11 @@ echo $this->Form->errors();
          <?php echo $this->Form->textBoxWrap('Description', ['Table' => 'Reaction', 'MultiLine' => true]); ?>
       </li>
 
+      <li class="Sort row form-group">
+         <?php echo $this->Form->labelWrap('Sort'); ?>
+         <?php echo $this->Form->textBoxWrap('Sort'); ?>
+      </li>
+
       <li class="Class row form-group">
          <?php echo $this->Form->labelWrap('Class'); ?>
          <?php echo $this->Form->textBoxWrap('Class'); ?>

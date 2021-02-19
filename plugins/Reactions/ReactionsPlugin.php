@@ -1447,6 +1447,7 @@ if (!function_exists('writeReactions')) {
         if ($types === null) {
             $types = ReactionModel::getReactionTypes(['Class' => ['Positive', 'Negative'], 'Active' => 1]);
         }
+        
         // Since statically cache the types, we do a copy of type for this row so that plugin can modify the value by reference.
         // Not doing so would alter types for every rows and since Discussions and Comments have different behavior that could be a problem.
         $rowReactionTypesReference = $types;
