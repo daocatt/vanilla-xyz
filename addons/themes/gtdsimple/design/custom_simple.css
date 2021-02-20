@@ -397,8 +397,16 @@ body.hasRichEditor .CommentOptions{display:block}body.hasRichEditor .bodybox-wra
     .Header .ToggleFlyout.Open .MeButton{
         background-color:#5e9e8c
     }
-    .Header .WhoIs>.Username{color:#fff}.Header .SignInLinks a{
-        -o-transition:background .1s ease,border .1s ease;-webkit-appearance:none;-webkit-transition:background .1s ease,border .1s ease;background:rgba(0,0,0,0);border:1px solid #fff;border-radius:6px;color:#fff;display:inline-block;font-family:Open Sans,Segoe UI,Helvetica Neue,Helvetica,Raleway,Arial,sans-serif;font-size:14px;font-weight:400;line-height:36px;min-height:36px;min-width:36px;padding:0 12px;text-decoration:none;transition:background .1s ease,border .1s ease
+    .Header .WhoIs>.Username{color:#fff}
+    .Header .SignInLinks a{
+        -o-transition:background .1s ease,border .1s ease;-webkit-appearance:none;-webkit-transition:background .1s ease,border .1s ease;
+        background:rgba(0,0,0,0);
+        border:1px solid #fff;border-radius:2px;
+        color:#fff;display:inline-block;font-family:Open Sans,Segoe UI,Helvetica Neue,Helvetica,Raleway,Arial,sans-serif;
+        font-size:14px;font-weight:400;line-height:28px;min-height:28px;min-width:36px;
+        padding:0 12px;text-decoration:none;
+        transition:background .1s ease,border .1s ease;
+        margin-left:15px;
     }
     @media screen and (max-width:768px){
         .Header .SignInLinks a{max-width:100%}
