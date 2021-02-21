@@ -1536,12 +1536,16 @@ class CategoryModel extends Gdn_Model implements EventFromRowInterface, Crawlabl
         if ($result === null) {
             $result = [];
         }
-
+        
         foreach ($categoryTree as $category) {
-            $result["{$category['LastDiscussionID']}/{$category['LastCommentID']}"] = [
-                'DiscussionID' => $category['LastDiscussionID'],
-                'CommentID' => $category['LastCommentID']
-            ];
+            if($category['LastCategoryID'] == $category['CategoryID'])
+            {
+                $result["{$category['LastDiscussionID']}/{$category['LastCommentID']}"] = [
+                    'DiscussionID' => $category['LastDiscussionID'],
+                    'CommentID' => $category['LastCommentID']
+                ];
+            }
+            
 
             if (!empty($category['Children'])) {
                 $this->gatherLastIDs($category['Children'], $result);
