@@ -299,7 +299,9 @@
                 <div class="Container">
                     <div class="row">
                         <div class="col col-copyRight">
-                            <p class="Footer-copyright">{t c="© Vanilla GTDsimple Theme"} {$smarty.now|date_format:"%Y"}</p>
+                            <p class="Footer-copyright">
+                                {t c="© GTD"} {$smarty.now|date_format:"%Y"}
+                            </p>
                         </div>
                         <div class="col col-logo">
                             <div class="Vanilla-logo">
