@@ -7,6 +7,17 @@
     {asset name="Head"}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,700i" rel="stylesheet">
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?7a6273a8c1bfa2c2b5f1bbe187e5829c";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
 </head>
 
 {assign
@@ -301,6 +312,7 @@
                         <div class="col col-copyRight">
                             <p class="Footer-copyright">
                                 {t c="© GTD"} {$smarty.now|date_format:"%Y"}
+                                <a href="https://beian.miit.gov.cn" target="_blank">沪ICP备17037942号-3</a>
                             </p>
                         </div>
                         <div class="col col-logo">
