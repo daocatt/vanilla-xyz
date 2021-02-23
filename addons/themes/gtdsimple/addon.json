@@ -23,6 +23,7 @@
         "Styles": {
             "Default": "%s_default",
             "Simple": "%s_simple",
+            "Vanilla": "%s_vanilla",
             "Classic": "%s_classic",
             "Dark": "%s_dark",
             "Cerulean": "%s_cerulean",
@@ -38,6 +39,10 @@
         "variables_simple": {
             "type": "json",
             "file": "variables_simple.json"
+        },
+        "variables_vanilla": {
+            "type": "json",
+            "file": "variables_vanilla.json"
         },
         "variables_classic": {
             "type": "json",
