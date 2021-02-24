@@ -1,0 +1,23 @@
+{
+    "name": "ActivitySwitch",
+    "description": "Enable or disable activity logs.",
+    "version": "1.0",
+    "requiredTheme": false,
+    "usePopupSettings": false,
+    "settingsPermission": "Garden.Moderation.Manage",
+    "hasLocale": true,
+    "mobileFriendly": true,
+    "registerPermissions": [
+        "Plugins.ActivitySwitch.Notify"
+    ],
+    "icon": "activityswitch.png",
+    "key": "activityswitch",
+    "type": "addon",
+    "authors": [
+        {
+            "name": "gtdxyz",
+            "email": "hiro@ecdo.co",
+            "homepage": "http://vanillaforums.gtd.xyz"
+        }
+    ]
+}
