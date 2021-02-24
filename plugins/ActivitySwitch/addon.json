@@ -2,6 +2,7 @@
     "name": "ActivitySwitch",
     "description": "Enable or disable activity logs.",
     "version": "1.0",
+    "License": "MIT",
     "requiredTheme": false,
     "usePopupSettings": false,
     "settingsPermission": "Garden.Moderation.Manage",
