@@ -35,6 +35,7 @@ class ImageResizer {
         IMAGETYPE_TIFF_II => 'tiff',
         IMAGETYPE_TIFF_MM => 'tiff',
         IMAGETYPE_ICO => 'ico',
+        IMAGETYPE_WEBP => 'webp',
     ];
 
     /**
@@ -55,7 +56,7 @@ class ImageResizer {
         }
 
         list($width, $height, $srcType) = getimagesize($source);
-        if (!in_array($srcType, [IMAGETYPE_GIF, IMAGETYPE_JPEG, IMAGETYPE_PNG])) {
+        if (!in_array($srcType, [IMAGETYPE_GIF, IMAGETYPE_JPEG, IMAGETYPE_PNG, IMAGETYPE_WEBP])) {
             $ext = $this->extFromImageType($srcType);
             throw new \InvalidArgumentException("Cannot resize images of this type ($ext).");
         }
